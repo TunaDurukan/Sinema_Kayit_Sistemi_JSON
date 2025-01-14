@@ -1,50 +1,42 @@
-<h1>📘 Öğrenci ve Ders Yönetim Sistemi</h1>
-<p>
-    Bu proje, öğrenciler, öğretim görevlileri ve dersler arasında ilişkileri yönetmek amacıyla geliştirilmiş bir uygulamadır. 
-    Kullanıcılar, öğrenciler ve öğretim görevlileri ekleyebilir, ders oluşturabilir ve atamalar yapabilir. 
-    Konsol tabanlı bu uygulama, C# dilindeki temel kavramları pratiğe dökme fırsatı sunar.
-</p>
+<h1>🎥 Sinema Kayıt Sistemi</h1>
+<p>Bu proje, sinema salonları, filmler ve müşteriler arasında ilişkileri yönetmek için geliştirilmiş bir konsol uygulamasıdır. Sistem, müşteri, film ve salon yönetimi gibi temel işlevsellikler sunar. Ek olarak, yapılan tüm ekleme, silme ve güncelleme işlemleri JSON dosyalarına kaydedilir ve bu veriler JSON dosyalarından okunur.</p>
 
-<h2>🛠️ Uygulama Özellikleri</h2>
+<h2>🛠️ Özellikler</h2>
 <ul>
-    <li><strong>Öğrenci Yönetimi:</strong> Öğrenci ekleme, silme, listeleme ve derslere kayıt işlemleri. Tüm veriler XML dosyasına kaydedilir ve XML'den okunur.</li>
-    <li><strong>Öğretim Görevlisi Yönetimi:</strong> Öğretim görevlisi ekleme, silme ve ders atama işlemleri. Bu veriler de XML dosyasında saklanır.</li>
-    <li><strong>Ders Yönetimi:</strong> Ders ekleme, silme, detay görüntüleme ve XML'e kaydetme işlemleri.</li>
+    <li><strong>Müşteri Yönetimi:</strong> Müşteri kaydetme, silme, güncelleme ve listeleme. Müşteriye film atama.</li>
+    <li><strong>Sinema Salonu Yönetimi:</strong> Salon ekleme, silme, güncelleme ve listeleme. Salona film atama.</li>
+    <li><strong>Film Yönetimi:</strong> Film ekleme, silme, güncelleme ve listeleme. Filmleri salona atama.</li>
+    <li><strong>JSON Desteği:</strong> Tüm veriler JSON dosyalarına kaydedilir ve JSON dosyalarından okunur.</li>
 </ul>
 
 <h2>📂 Proje Yapısı</h2>
-<ul>
-    <li><strong>Interfaces:</strong> 
-        <ul>
-            <li><code>IPerson</code>: Kişi sınıfları için temel arayüz.</li>
-        </ul>
-    </li>
-    <li><strong>Models:</strong>
-        <ul>
-            <li><code>Person</code>: Kişilerin temel özelliklerini tanımlar.</li>
-            <li><code>Student</code>: Öğrenciye özgü özellikleri içerir.</li>
-            <li><code>Instructor</code>: Öğretim görevlilerine ait detayları içerir.</li>
-            <li><code>Courses</code>: Ders bilgilerini ve ilişkili verileri yönetir.</li>
-        </ul>
-    </li>
-    <li><strong>Data:</strong>
-        <ul>
-            <li><code>XmlHelper</code>: Verilerin XML dosyasına kaydedilmesi ve XML'den okunması için gerekli yardımcı sınıf.</li>
-        </ul>
-    </li>
-    <li><strong>Program:</strong> Ana uygulama dosyası, tüm işlevselliği bir araya getirir ve kullanıcı etkileşimlerini yönetir.</li>
-</ul>
-
-<h2>📋 Kullanım</h2>
+<h3>Sınıflar ve Arayüzler</h3>
 <ol>
-    <li>Proje dosyalarını indirin ve bir IDE'de açın (ör. Visual Studio).</li>
-    <li><code>Program.cs</code> dosyasını çalıştırın.</li>
-    <li>Konsolda sunulan menüden işlemlerinizi seçerek sistemi kullanın.</li>
+    <li><strong>BaseEntity.java:</strong> <code>id</code> ve <code>adi</code> özelliklerini içeren temel sınıf. Tüm diğer varlıklar bu sınıfı genişletir.</li>
+    <li><strong>Musteri.java:</strong> Müşteri bilgilerini (ad, telefon, e-posta) ve müşterinin izlemek istediği filmi içerir. Müşteri yönetimi işlevlerini (ekleme, silme, güncelleme) uygular. Veriler JSON dosyasına kaydedilir ve oradan okunur.</li>
+    <li><strong>Film.java:</strong> Film bilgilerini (ad, tür, süre) içerir. Filmlerin hangi salonda oynatıldığını takip eder. Film yönetimi işlevlerini (ekleme, silme, güncelleme) uygular. Veriler JSON dosyasına kaydedilir ve oradan okunur.</li>
+    <li><strong>Salon.java:</strong> Salon bilgilerini (kapasite, oynatılan film) içerir. Salon yönetimi işlevlerini (ekleme, silme, güncelleme) uygular. Veriler JSON dosyasına kaydedilir ve oradan okunur.</li>
+    <li><strong>IKayit.java:</strong> Kayıt ekleme, silme ve güncelleme işlemleri için standart bir arayüz sağlar.</li>
+    <li><strong>Main.java:</strong> Tüm işlevlerin birleştirildiği ana sınıf. Kullanıcı etkileşimini sağlar ve menüler aracılığıyla yönetimi gerçekleştirir.</li>
 </ol>
 
-<h2>🎯 Amaç</h2>
+<h2>🚀 Kullanım</h2>
+<ol>
+    <li>Proje dosyalarını bilgisayarınıza indirin.</li>
+    <li>Bir Java IDE'sinde açın (ör. IntelliJ IDEA, Eclipse).</li>
+    <li><code>Main.java</code> dosyasını çalıştırın.</li>
+    <li>Konsolda sunulan menülerden seçim yaparak sistemi kullanın.</li>
+</ol>
+
+<h3>Ana Menü</h3>
+<ul>
+    <li><strong>1- Müşteri Yönetimi:</strong> Müşteri ekleme, silme, güncelleme ve listeleme.</li>
+    <li><strong>2- Sinema Salonu Yönetimi:</strong> Salon ekleme, silme, güncelleme ve listeleme.</li>
+    <li><strong>3- Film Yönetimi:</strong> Film ekleme, silme, güncelleme ve listeleme.</li>
+    <li><strong>0- Çıkış:</strong> Uygulamadan çıkış.</li>
+</ul>
+
+<h2>📌 Amaç</h2>
 <p>
-    Bu proje, Piri Reis Üniversitesi'nde almış olduğum Görsel Programlama dersinin vize projesidir. 
-    Sistem, dinamik bir yapı üzerine kurulmuş olup, gerçek hayattaki yönetim ihtiyaçlarına yönelik bir simülasyon sunar. 
-    XML tabanlı veri kaydetme ve okuma işlevselliği ile yazılım geliştirme pratiklerini gerçekleştirme imkânı sağlar.
+    Bu proje, Piri Reis Üniversitesi'nde almış olduğum Nesneye Dayalı Programlama dersinin vize projesidir. Sistem, dinamik bir yapı üzerine kurulmuş olup, gerçek hayattaki yönetim ihtiyaçlarına yönelik bir simülasyon sağlar. JSON desteği, verilerin kalıcılığını sağlar ve projeyi daha gerçekçi hale getirir.
 </p>
